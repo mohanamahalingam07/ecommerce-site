@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern E-Commerce</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        body {
+            background: #121212;
+            color: #fff;
+            text-align: center;
+        }
+        /* Navbar */
+        .navbar {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            margin: 0 12px;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+        .navbar a:hover {
+            color: #ff7e5f;
+        }
+        /* Hero Section */
+        .hero {
+            height: 75vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: url('https://source.unsplash.com/1600x900/?shopping,mall') no-repeat center center/cover;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            width: 100%;
+        }
+        .hero h1 {
+            font-size: 42px;
+            font-weight: bold;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-top: 8px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 22px;
+            margin-top: 15px;
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            border-radius: 20px;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        /* Featured Products */
+        .products {
+            padding: 40px 20px;
+        }
+        .products h2 {
+            margin-bottom: 20px;
+            font-size: 26px;
+            font-weight: 600;
+        }
+        .product-list {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .product {
+            background: #1e1e1e;
+            padding: 18px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.1);
+            width: 250px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .product:hover {
+            transform: translateY(-5px);
+        }
+        .product img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .product h3 {
+            font-size: 18px;
+            margin: 8px 0;
+        }
+        .product p {
+            font-size: 16px;
+            color: #ff7e5f;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .product-description {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+        .footer {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div><strong>🛍️ Modern E-Commerce</strong></div>
+        <div>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <h1>Shop the Latest Trends</h1>
+        <p>Discover exclusive deals on our latest collections.</p>
+        <a href="products.html" class="btn">Shop Now</a>
+    </div>
+
+    <section class="products">
+        <h2>Featured Products</h2>
+        <div class="product-list">
+            <div class="product">
+                <img src="https://source.unsplash.com/250x250/?fashion,clothing" alt="Stylish Outfit">
+                <h3>Stylish Outfit</h3>
+                <p>$49.99</p>
+                <p class="product-description">A trendy and comfortable outfit perfect for any occasion.</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+            <div class="product">
+                <img src="https://source.unsplash.com/250x250/?watch,luxury" alt="Luxury Watch">
+                <h3>Luxury Watch</h3>
+                <p>$199.99</p>
+                <p class="product-description">An elegant timepiece designed to elevate your style.</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer">&copy; 2025 Modern E-Commerce. All Rights Reserved.</div>
+</body>
+</html>

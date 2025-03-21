@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #d8d8d8, #ece9ea);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 15px;
+            color: #5a5a5a;
+            font-size: 20px;
+            backdrop-filter: blur(10px);
+            width: 100%;
+            position: fixed;
+            top: 0;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            margin-top: 80px;
+        }
+
+        h2 {
+            color: #5a5a5a;
+            margin-bottom: 20px;
+        }
+
+        /* Input Fields */
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        input:focus {
+            outline: 2px solid #ff9a9e;
+        }
+
+        /* Buttons */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(to right, #270203, #585555);
+            border-radius: 25px;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: linear-gradient(to right, #906154, #5a2526);
+            transform: scale(1.05);
+        }
+
+        .link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #5a5a5a;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar">➕ Add Product</div>
+
+    <div class="container">
+        <h2>Add a New Product</h2>
+        <form id="productForm">
+            <input type="text" id="name" placeholder="Product Name" required>
+            <input type="number" id="price" placeholder="Price" step="0.01" required>
+            <input type="text" id="category" placeholder="Category" required>
+            <input type="text" id="description" placeholder="Description" required>
+            <button type="submit" class="btn">Add Product</button>
+        </form>
+
+        <a href="index.html" class="link">⬅️ Back to Home</a>
+    </div>
+
+    <script>
+        const apiUrl = "https://fj0c3c634e.execute-api.us-east-1.amazonaws.com/dev/post";
+
+        document.getElementById("productForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const data = {
+                name: document.getElementById("name").value,
+                price: parseFloat(document.getElementById("price").value),
+                category: document.getElementById("category").value,
+                description: document.getElementById("description").value
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data)
+                });
+
+                alert("Product added successfully!");
+                window.location.href = "products.html";
+            } catch (error) {
+                console.error("Error adding product:", error);
+            }
+        });
+    </script>
+
+</body>
+</html>

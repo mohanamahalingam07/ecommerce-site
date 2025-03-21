@@ -1,0 +1,109 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Header */
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Shopping Cart Container */
+.cart-container {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Cart List */
+.cart-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.cart-list li {
+    background: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-list li:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cart-list li span {
+    font-size: 18px;
+    color: #34495e;
+    font-weight: 500;
+}
+
+/* Remove Button */
+.remove-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.remove-btn:hover {
+    background: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Total Price */
+.total-price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 12px;
+    background: #2ecc71;
+    color: white;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* Home Button */
+.home-btn {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    background: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home-btn:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+}
